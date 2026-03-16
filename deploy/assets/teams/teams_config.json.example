@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Engineering",
+    "team_id": "",
+    "summary_channel_id": "",
+    "prompt_time": "09:00",
+    "summary_time": "10:00",
+    "weekly_rollup_day": "Friday",
+    "weekly_rollup_time": "16:00",
+    "timezone": "America/New_York",
+    "members": [
+      { "upn": "jane.doe@contoso.com", "display_name": "Jane Doe" },
+      { "upn": "john.smith@contoso.com", "display_name": "John Smith" }
+    ]
+  },
+  {
+    "name": "Product",
+    "team_id": "",
+    "summary_channel_id": "",
+    "prompt_time": "09:30",
+    "summary_time": "10:30",
+    "weekly_rollup_day": "Friday",
+    "weekly_rollup_time": "16:30",
+    "timezone": "America/New_York",
+    "members": [
+      { "upn": "alice@contoso.com", "display_name": "Alice" },
+      { "upn": "bob@contoso.com", "display_name": "Bob" }
+    ]
+  }
+]

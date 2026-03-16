@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.16",
+  "version": "1.0.0",
+  "id": "{{BOT_ID}}",
+  "developer": {
+    "name": "Standup Agent",
+    "websiteUrl": "https://{{APP_DOMAIN}}",
+    "privacyUrl": "https://{{APP_DOMAIN}}/privacy",
+    "termsOfUseUrl": "https://{{APP_DOMAIN}}/terms"
+  },
+  "name": {
+    "short": "Standup Agent",
+    "full": "Async Daily Standup Bot with AI Summaries"
+  },
+  "description": {
+    "short": "Automated daily standup prompts, AI summaries, and team analytics",
+    "full": "Standup Agent sends daily standup prompts to team members via Adaptive Cards, collects responses, synthesizes team summaries with Azure OpenAI, and posts them to configured channels. Supports multiple teams with independent schedules and timezones. Includes a Fabric analytics pipeline for blocker trend analysis and team health scoring."
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#4F6BED",
+  "bots": [
+    {
+      "botId": "{{BOT_ID}}",
+      "scopes": ["personal", "team", "groupChat"],
+      "supportsFiles": false,
+      "isNotificationOnly": false,
+      "commandLists": [
+        {
+          "scopes": ["personal"],
+          "commands": [
+            { "title": "status", "description": "Show who has responded today" },
+            { "title": "standup", "description": "Manually trigger your standup prompt" },
+            { "title": "skip", "description": "Mark yourself as OOO for today" },
+            { "title": "history", "description": "Show your last 5 standups" }
+          ]
+        }
+      ]
+    }
+  ],
+  "permissions": ["identity", "messageTeamMembers"],
+  "validDomains": ["{{APP_DOMAIN}}"]
+}

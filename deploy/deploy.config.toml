@@ -1,0 +1,52 @@
+[azure]
+subscription_id = ""
+location = "eastus"
+resource_group_name = ""
+
+[naming]
+prefix = "standupagent"
+web_app_name = ""
+app_service_plan_name = ""
+storage_account_name = ""
+openai_account_name = ""
+bot_name = ""
+
+[storage]
+responses_container = "standup-responses"
+config_container = "bot-config"
+
+[entra]
+app_display_name = "Standup Agent"
+app_id = ""
+app_secret = ""
+
+[openai]
+deploy_openai = true
+chat_deployment = "gpt-4-1"
+chat_model = "gpt-4.1"
+chat_model_version = "2025-04-14"
+sku_name = "S0"
+deployment_sku_name = "GlobalStandard"
+capacity = 50
+api_version = "2024-12-01-preview"
+
+[bot]
+bot_sku = "F0"
+
+[app_settings]
+webapp_sku = "B1"
+python_version = "3.11"
+
+[fabric]
+workspace_id = ""
+push_notebooks = true
+
+[lakehouses]
+landing_name = "lh_standup_landing"
+landing_id = ""
+bronze_name = "lh_standup_bronze"
+bronze_id = ""
+silver_name = "lh_standup_silver"
+silver_id = ""
+gold_name = "lh_standup_gold"
+gold_id = ""
