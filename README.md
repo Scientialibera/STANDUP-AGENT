@@ -88,6 +88,24 @@ On a configured day (e.g., Friday at 4 PM), the scheduler aggregates the week's 
 | `03_enrich_main`     | Silver  | Sentiment analysis, topic extraction, blocker duration   |
 | `04_aggregate_main`  | Gold    | Response rates, blocker analysis, health score, activity |
 
+**Fabric Workspace Structure:**
+
+```
+notebooks/
+  main/
+    01_ingest_main
+    02_transform_main
+    03_enrich_main
+    04_aggregate_main
+  modules/
+    config_module
+    utils_module
+lh_standup_landing           ← raw JSON blob snapshots
+lh_standup_bronze            ← normalized, deduplicated
+lh_standup_silver            ← sentiment, topics, blocker duration
+lh_standup_gold              ← response rates, health scores, activity
+```
+
 **Gold Tables:**
 
 - `team_response_rates` -- daily/weekly response rates by team
@@ -173,7 +191,7 @@ notepad deploy/assets/teams/teams_config.json
 # 3. Deploy application + seed config
 .\deploy\deploy-app.ps1
 
-# 4. Deploy Fabric pipeline (optional)
+# 4. Deploy Fabric pipeline (optional -- lakehouses, folders, notebooks)
 .\deploy\deploy-fabric.ps1
 
 # 5. Upload teams-manifest.zip via Teams Admin Center
