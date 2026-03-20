@@ -207,6 +207,17 @@ notepad deploy/assets/teams/teams_config.json
 
 Grant these in the Azure Portal under **Entra ID > App registrations > API permissions**.
 
+## Fabric Deployment Lessons Learned
+
+Operational practices for this repo:
+
+- Use `pwsh ./deploy/deploy-fabric.ps1` from repo root as the standard notebook push command
+- Keep `deploy/deploy.config.toml` as the single source for workspace and lakehouse targeting
+- Keep notebooks in `deploy/assets/notebooks/` as source of truth; redeploy instead of hand-editing workspace notebooks
+- Preserve deterministic deployment order (shared modules before main pipeline notebooks)
+- Treat deploy as idempotent and rerunnable; if failures occur, fix config/source and rerun
+- Validate prerequisites before push: `az login`, correct workspace reference, and Fabric capacity availability
+
 ## Blob Storage Layout
 
 ```
